@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reuben Addison, Ph.D.</title>
+<meta name="description" content="Reuben Addison, Ph.D. Data scientist and quantitative researcher. Applied machine learning, Bayesian statistics, and causal inference for healthcare, biopharma, clinical research, and human performance." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F4F5F2;
+    --panel:#FFFFFF;
+    --ink:#191B1F;
+    --muted:#5B6069;
+    --faint:#9AA0A8;
+    --hair:#E2E4DF;
+    --accent:#3B34A8;
+    --accent-ink:#2A2680;
+    --trace:#DB8F2C;
+    --maxw:960px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Inter",system-ui,sans-serif;
+    font-size:16.5px;line-height:1.68;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{color:var(--accent-ink);text-decoration:underline;text-underline-offset:2px;}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px;}
+  .mono{font-family:"IBM Plex Mono",monospace;}
+
+  /* top bar */
+  header.bar{
+    position:sticky;top:0;z-index:30;
+    background:rgba(244,245,242,.82);backdrop-filter:saturate(120%) blur(7px);
+    border-bottom:1px solid var(--hair);
+  }
+  header.bar .in{
+    max-width:var(--maxw);margin:0 auto;padding:13px 26px;
+    display:flex;align-items:center;justify-content:space-between;gap:16px;
+  }
+  header.bar .who{font-family:"IBM Plex Mono",monospace;font-size:13px;font-weight:500;color:var(--ink);letter-spacing:.01em;}
+  header.bar nav{display:flex;gap:20px;flex-wrap:wrap;}
+  header.bar nav a{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);}
+  header.bar nav a:hover{color:var(--accent);text-decoration:none;}
+
+  /* hero */
+  .hero{max-width:var(--maxw);margin:0 auto;padding:70px 26px 34px;}
+  .kicker{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 20px;}
+  .hero h1{
+    font-family:"Fraunces",Georgia,serif;font-weight:500;
+    font-size:clamp(34px,6vw,60px);line-height:1.04;letter-spacing:-.02em;
+    margin:0 0 22px;max-width:16ch;
+  }
+  .hero .lead{font-size:clamp(17px,2.3vw,20px);color:#3A3D45;max-width:56ch;margin:0 0 26px;line-height:1.55;}
+  .hero .meta{display:flex;flex-wrap:wrap;gap:8px 8px;margin:0 0 8px;}
+  .chip{
+    font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);
+    border:1px solid var(--hair);border-radius:999px;padding:4px 12px;background:var(--panel);
+  }
+  .chip a{color:var(--muted);} .chip a:hover{color:var(--accent);text-decoration:none;}
+
+  /* signal signature */
+  .signal{max-width:var(--maxw);margin:12px auto 0;padding:0 26px;}
+  .signal svg{width:100%;height:auto;display:block;}
+  .grid-dot{fill:var(--ink);opacity:.05;}
+  .trace{
+    fill:none;stroke:var(--trace);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;
+    stroke-dasharray:4600;stroke-dashoffset:4600;
+    animation:draw 2.7s cubic-bezier(.16,1,.3,1) .35s forwards;
+  }
+  .baseline{stroke:var(--hair);stroke-width:1;}
+  .dot{fill:var(--trace);opacity:0;animation:appear .5s ease 2.75s forwards;}
+  .ring{fill:none;stroke:var(--trace);stroke-width:1.4;opacity:0;transform-origin:center;
+    animation:ping 2.4s ease-out 3.1s infinite;}
+  @keyframes draw{to{stroke-dashoffset:0;}}
+  @keyframes appear{to{opacity:1;}}
+  @keyframes ping{0%{opacity:.5;transform:scale(.4);}70%,100%{opacity:0;transform:scale(2.4);}}
+
+  /* body */
+  main{max-width:var(--maxw);margin:0 auto;padding:20px 26px 10px;}
+  section{padding:34px 0;border-top:1px solid var(--hair);}
+  section:first-of-type{border-top:0;}
+  .sec-label{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin:0 0 14px;}
+  section h2{font-family:"Fraunces",Georgia,serif;font-weight:500;font-size:26px;letter-spacing:-.01em;margin:0 0 14px;}
+  section p{margin:0 0 16px;color:#34373F;max-width:66ch;}
+  .prose{max-width:66ch;}
+
+  /* what I do grid */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--hair);border:1px solid var(--hair);border-radius:10px;overflow:hidden;}
+  .card{background:var(--panel);padding:22px 22px 24px;}
+  .card .tagx{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;color:var(--accent);}
+  .card h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:18px;margin:10px 0 7px;letter-spacing:-.005em;}
+  .card p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.55;max-width:none;}
+
+  /* work items */
+  .work{margin-top:6px;}
+  .work-item{padding:20px 0;border-bottom:1px solid var(--hair);}
+  .work-item:last-child{border-bottom:0;}
+  .work-item h3{font-family:"Fraunces",Georgia,serif;font-weight:600;font-size:19px;margin:0 0 6px;}
+  .work-item .stack{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--faint);margin:10px 0 0;}
+
+  /* pubs */
+  .pubs{list-style:none;padding:0;margin:2px 0 0;}
+  .pubs li{padding:12px 0;border-bottom:1px solid var(--hair);font-size:15px;color:#34373F;max-width:74ch;}
+  .pubs li:last-child{border-bottom:0;}
+  .venue{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);}
+
+  /* tags */
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:4px;}
+  .tag{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--muted);border:1px solid var(--hair);border-radius:999px;padding:4px 12px;background:var(--panel);}
+
+  /* contact */
+  .contact a{font-family:"IBM Plex Mono",monospace;font-size:14px;display:inline-block;margin-right:22px;}
+
+  footer{max-width:var(--maxw);margin:0 auto;padding:30px 26px 46px;color:var(--faint);
+    font-family:"IBM Plex Mono",monospace;font-size:12px;border-top:1px solid var(--hair);}
+
+  @media (max-width:680px){
+    .cards{grid-template-columns:1fr;}
+    header.bar nav{display:none;}
+    .hero{padding-top:46px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .trace{animation:none;stroke-dashoffset:0;}
+    .dot{animation:none;opacity:1;}
+    .ring{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="in">
+    <span class="who">reuben addison, ph.d.</span>
+    <nav aria-label="Primary">
+      <a href="#about">about</a>
+      <a href="#do">what i do</a>
+      <a href="#work">work</a>
+      <a href="#research">research</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <p class="kicker">Data scientist &middot; Quantitative researcher</p>
+  <h1>From raw signals to decisions worth trusting.</h1>
+  <p class="lead">Applied machine learning, Bayesian statistics, and causal inference for healthcare, biopharma, clinical research, and human performance.</p>
+  <div class="meta">
+    <span class="chip">Greencastle, IN</span>
+    <span class="chip"><a href="mailto:reuben.addison@gmail.com">reuben.addison@gmail.com</a></span>
+    <span class="chip"><a href="https://github.com/reubebe">github</a></span>
+    <span class="chip"><a href="https://www.linkedin.com/in/rnaddison/">linkedin</a></span>
+    <span class="chip"><a href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en">scholar</a></span>
+  </div>
+</div>
+
+<div class="signal" aria-hidden="true">
+  <svg viewBox="0 0 1200 200" preserveAspectRatio="none" role="presentation">
+    <defs>
+      <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+        <circle class="grid-dot" cx="2" cy="2" r="1.3"/>
+      </pattern>
+    </defs>
+    <rect x="0" y="0" width="1200" height="200" fill="url(#dots)"/>
+    <line class="baseline" x1="0" y1="118" x2="1200" y2="118"/>
+    <path class="trace" d="M0 118 L150 118 C185 118 196 100 220 100 C244 100 255 118 285 118 L322 118 L332 132 L346 34 L360 150 L372 118 L470 118 C505 118 518 92 548 92 C578 92 590 118 620 118 C680 118 700 66 760 92 C820 118 838 150 890 118 C942 86 966 150 1020 118 C1074 86 1096 128 1140 118 C1166 112 1184 118 1200 118"/>
+    <g>
+      <circle class="ring" cx="1200" cy="118" r="6"/>
+      <circle class="dot" cx="1200" cy="118" r="4.5"/>
+    </g>
+  </svg>
+</div>
+
+<main>
+
+  <section id="about">
+    <p class="sec-label">About</p>
+    <div class="prose">
+      <p>I am a data scientist and quantitative researcher who likes hard, messy problems in human health. Over seven years I have designed experimental and observational studies, built statistical and machine learning models, and turned complicated results into decisions that clinicians, researchers, and teams can use. My work sits where applied machine learning meets Bayesian statistics, causal inference, and behavioral and neurophysiological science.</p>
+      <p>I am especially drawn to building reproducible analytical tools for healthcare, biopharma, clinical research, and human performance. Right now I am a data science intern with the Chinese American Biopharmaceutical Society, I direct the Motor Control Lab at DePauw University, and I recently finished an M.S. in Analytics at Georgia Tech.</p>
+    </div>
+  </section>
+
+  <section id="do">
+    <p class="sec-label">What I do</p>
+    <div class="cards">
+      <div class="card">
+        <span class="tagx">ML</span>
+        <h3>Machine learning &amp; deep learning</h3>
+        <p>CNNs, transformers, and gradient-boosted models for prediction, classification, and interpretation on high-dimensional data.</p>
+      </div>
+      <div class="card">
+        <span class="tagx">STATS</span>
+        <h3>Bayesian &amp; causal inference</h3>
+        <p>Multilevel Bayesian and mixed-effects models, causal methods for observational data, and honest uncertainty from prior to decision.</p>
+      </div>
+      <div class="card">
+        <span class="tagx">HEALTH</span>
+        <h3>Biopharma &amp; clinical analytics</h3>
+        <p>Reproducible tools across drug development, clinical research, and human performance, from study design through reporting.</p>
+      </div>
+      <div class="card">
+        <span class="tagx">SIGNAL</span>
+        <h3>Signals &amp; digital biomarkers</h3>
+        <p>Physiological and behavioral time series, from ECG and EEG to wearables and motion capture, turned into usable biomarkers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="work">
+    <p class="sec-label">Selected work</p>
+    <div class="work">
+      <div class="work-item">
+        <h3>OpenTrial &middot; Bayesian trial design engine</h3>
+        <p>A computation engine that turns structured trial inputs into a cited, reproducible design report. It pulls evidence-derived priors with source-level provenance from ClinicalTrials.gov, PubMed, openFDA, and DailyMed, then produces power grids, prior-sensitivity analysis, predictive probability-of-success criteria, and simulation-calibrated group-sequential designs. Built during my internship with the Chinese American Biopharmaceutical Society. <a href="https://github.com/ds4cabs/OpenTrial">View repository</a>.</p>
+        <p class="stack">Python &middot; Streamlit &middot; Bayesian inference &middot; simulation &middot; clinical data APIs</p>
+      </div>
+      <div class="work-item">
+        <h3>ECG signal quality classification</h3>
+        <p>A deep-learning pipeline for cardiac signal quality on the PTB-XL benchmark: a CNN-Transformer hybrid ensemble against L1-regularized logistic regression, MLP, and CNN baselines, with stratified cross-validation, Youden-index threshold optimization, and saliency and per-lead importance analysis end to end. <a href="https://github.com/reubebe/ECG-signal-quality-detection">View repository</a>.</p>
+        <p class="stack">Python &middot; PyTorch &middot; deep learning &middot; signal processing &middot; interpretability</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="research">
+    <p class="sec-label">Domain background</p>
+    <div class="prose">
+      <p>My research grounding is in neurological movement disorders, with a focus on Parkinson's disease. During my Ph.D. at Louisiana State University I ran longitudinal studies of motor and cognitive outcomes and built EEG signal-processing pipelines. As a postdoctoral fellow in the Brain Recovery Lab at the MGH Institute of Health Professions, I applied multilevel mixed-effects models to longitudinal fMRI and TMS datasets for NIH-funded studies. Earlier, a Mitacs internship at Memorial University put me on a clinical feasibility study of a remote tele-ultrasound system, later published in the Journal of Ultrasound in Medicine.</p>
+    </div>
+    <ul class="pubs">
+      <li>Addison, R. N., et al. (2023). Bilateral transfer of a visuomotor task in different workspace configurations. <span class="venue">Journal of Motor Behavior</span></li>
+      <li>Gauss, T. M., Addison, R. N., et al. (2025). Wild blueberry supplementation and motor symptoms in Parkinson's disease. <span class="venue">SFN 2025</span></li>
+      <li>Gauss, T. M., Addison, R. N., et al. (2024). Subtyping Parkinson's disease by symptom dominance reveals differences in postural sway. <span class="venue">NASPSA 2024</span></li>
+      <li>Smith, A., Addison, R., et al. (2018). Remote mentoring using telemedicine platforms. <span class="venue">Journal of Ultrasound in Medicine</span></li>
+    </ul>
+  </section>
+
+  <section id="toolkit">
+    <p class="sec-label">Toolkit</p>
+    <div class="tags">
+      <span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">MATLAB</span><span class="tag">PyTorch</span><span class="tag">PyMC</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Bayesian inference</span><span class="tag">Causal inference</span><span class="tag">Mixed-effects models</span><span class="tag">Signal processing</span><span class="tag">Reproducible pipelines</span>
+    </div>
+  </section>
+
+  <section id="contact">
+    <p class="sec-label">Contact</p>
+    <p class="prose">Open to conversations in health, biopharma, and clinical data science. The fastest way to reach me is email.</p>
+    <div class="contact">
+      <a href="mailto:reuben.addison@gmail.com">email</a>
+      <a href="https://github.com/reubebe">github</a>
+      <a href="https://www.linkedin.com/in/rnaddison/">linkedin</a>
+      <a href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en">scholar</a>
+      <a href="#">cv</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Reuben Addison &copy; 2026 &middot; Designed and built from scratch
+</footer>
+
+</body>
+</html>
