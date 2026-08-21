@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Reuben Addison, Ph.D.</title>
-<meta name="description" content="Reuben Addison, Ph.D. Data scientist and quantitative researcher. Applied machine learning, Bayesian statistics, and causal inference for healthcare, biopharma, clinical research, and human performance." />
+<meta name="description" content="Reuben Addison, Ph.D. Clinical research scientist and quantitative researcher. Clinical trial design, Bayesian statistics, causal inference, and applied machine learning for clinical research, health analytics, and biopharma." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -85,9 +85,9 @@
       <span class="initials" style="display:none;">RA</span>
     </div>
     <h1>Reuben Addison</h1>
-    <p class="role">Data scientist and quantitative researcher</p>
+    <p class="role">Clinical research scientist &amp; quantitative researcher</p>
     <div class="rule"></div>
-    <p class="blurb">Applied machine learning, Bayesian statistics, and causal inference for healthcare, biopharma, and clinical research.</p>
+    <p class="blurb">Clinical trial design, Bayesian statistics, and causal inference for clinical research, health analytics, and biopharma.</p>
 
     <ul class="links">
       <li><a href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en">
@@ -103,32 +103,37 @@
 
   <main id="about">
     <p class="hello">Hello world!</p>
-    <p class="thesis">From raw signals to decisions worth trusting.</p>
+    <p class="thesis">I help clinical research questions get answers that hold up.</p>
 
-    <p>I am a data scientist and quantitative researcher who likes hard, messy problems in human health. Over seven years I have designed experimental and observational studies, built statistical and machine learning models, and turned complicated results into decisions that clinicians, researchers, and teams can use. My work sits where applied machine learning meets Bayesian statistics, causal inference, and behavioral and neurophysiological science.</p>
+    <p>I am a clinical research scientist with a quantitative bent. For about seven years I have designed studies, built the Bayesian and causal models to make sense of them, and done the less glamorous work of turning tangled results into something a clinician or a study team can actually decide on. Most of that has been in clinical trials, movement-disorders research, and health data where the stakes are real and the data rarely cooperates.</p>
 
-    <p>I am especially drawn to building reproducible analytical tools for high-stakes, data-rich problems, from healthcare and biopharma to broader applied analytics and decision support. Right now I am a data science intern with the Chinese American Biopharmaceutical Society, I direct the Motor Control Lab at DePauw University, and I recently finished an M.S. in Analytics at Georgia Tech.</p>
+    <p>What I care about is whether a finding survives contact with a skeptical reviewer, not just whether the model runs. These days I direct the Motor Control Lab at DePauw, work as a data science intern with the Chinese American Biopharmaceutical Society, and just finished an M.S. in Analytics at Georgia Tech, on top of a Ph.D. built on clinical movement-disorders research.</p>
 
     <h2 id="do">What I Do</h2>
-    <h3>Machine Learning And Deep Learning</h3>
-    <p>CNNs, transformers, and gradient-boosted models for prediction, classification, and interpretation on high-dimensional data.</p>
+    <h3>Clinical Trial Design And Evidence Generation</h3>
+    <p>I design Bayesian and group-sequential trials and write the analysis plans behind them, working out how a design behaves, through power, prior sensitivity, and predictive probability of success, before anyone commits to it. I also build the evidence synthesis that feeds those designs from clinical and public data.</p>
+    <h3>Health Analytics And Study Design</h3>
+    <p>I design clinical and observational studies and use causal methods to get honest answers out of real-world data, the kind of analysis that turns a vague research question into something a clinician or stakeholder can act on.</p>
     <h3>Bayesian And Causal Inference</h3>
-    <p>Multilevel Bayesian and mixed-effects models, causal methods for observational data, and honest uncertainty from prior to decision.</p>
-    <h3>Applied Analytics And Experimental Design</h3>
-    <p>Study design, A/B testing, and statistical analysis plans that turn ambiguous questions into decisions, in health and beyond.</p>
+    <p>Multilevel Bayesian and mixed-effects models are my default tools, largely because they let me be honest about uncertainty and carry it all the way through to the decision instead of hiding it behind a point estimate.</p>
+    <h3>Machine Learning And Deep Learning</h3>
+    <p>When the problem calls for it, I reach for CNNs, transformers, and gradient-boosted models, usually on high-dimensional clinical or physiological data where getting the prediction right matters less than understanding why it works.</p>
     <h3>Signals And Time Series</h3>
-    <p>Physiological, behavioral, and other time series, from ECG and EEG to wearables and motion capture, turned into usable signals.</p>
+    <p>A lot of my work starts as messy physiological signals, ECG, EEG, motion capture, that have to be cleaned and made trustworthy before anything else can happen. I build the pipelines that do that reproducibly.</p>
 
     <h2 id="work">Selected Work</h2>
     <h3>OpenTrial, a Bayesian Trial Design Engine</h3>
-    <p>A computation engine that turns structured trial inputs into a cited, reproducible design report. It pulls evidence-derived priors with source-level provenance from ClinicalTrials.gov, PubMed, openFDA, and DailyMed, then produces power grids, prior-sensitivity analysis, predictive probability-of-success criteria, and simulation-calibrated group-sequential designs. Built during my internship with the Chinese American Biopharmaceutical Society. <a href="https://github.com/ds4cabs/OpenTrial">View repository</a>.</p>
+    <p>OpenTrial takes the structured inputs of a trial and turns them into a cited, reproducible design report, the sort of thing a study team can actually defend. It pulls evidence-derived priors with source-level provenance from ClinicalTrials.gov, PubMed, openFDA, and DailyMed, then produces power grids, prior-sensitivity analysis, predictive probability-of-success criteria, and simulation-calibrated group-sequential designs. I built it during my internship with the Chinese American Biopharmaceutical Society. <a href="https://github.com/ds4cabs/OpenTrial">View repository</a>.</p>
     <p class="stack">Python, Streamlit, Bayesian inference, simulation, clinical data APIs</p>
+    <h3>KinetiScan, Markerless 3D Motion Analysis</h3>
+    <p>KinetiScan recovers 3D joint positions from a single ordinary camera, no marker suit, no lab full of hardware. The trick is a distance-conditioned transformer that lifts 2D landmarks to metric 3D pose; I trained it across four public datasets and then held it to a clinical standard, validating against marker-based Vicon and Plug-in-Gait references. Joint-angle waveforms agreed at r&nbsp;=&nbsp;0.97&ndash;0.99, test-retest reliability held at ICC&nbsp;0.79&ndash;0.94, and gait events landed at F1&nbsp;0.92. It runs in a browser, with Python-to-JavaScript numerical parity so the deployed version matches the research code. <a href="https://github.com/reubebe">View on GitHub</a>.</p>
+    <p class="stack">Python, PyTorch, ONNX, deep learning, computer vision, clinical validation</p>
     <h3>ECG Signal Quality Classification</h3>
     <p>A deep-learning pipeline for cardiac signal quality on the PTB-XL benchmark: a CNN-Transformer hybrid ensemble against L1-regularized logistic regression, MLP, and CNN baselines, with stratified cross-validation, Youden-index threshold optimization, and saliency and per-lead importance analysis end to end. <a href="https://github.com/reubebe/ECG-signal-quality-detection">View repository</a>.</p>
     <p class="stack">Python, PyTorch, deep learning, signal processing, interpretability</p>
 
     <h2 id="research">Domain Background</h2>
-    <p>My research grounding is in neurological movement disorders, with a focus on Parkinson's disease. During my Ph.D. at Louisiana State University I ran longitudinal studies of motor and cognitive outcomes and built EEG signal-processing pipelines. As a postdoctoral fellow in the Brain Recovery Lab at the MGH Institute of Health Professions, I applied multilevel mixed-effects models to longitudinal fMRI and TMS datasets for NIH-funded studies. Earlier, a Mitacs internship at Memorial University put me on a clinical feasibility study of a remote tele-ultrasound system, later published in the Journal of Ultrasound in Medicine.</p>
+    <p>The research I came up through is in neurological movement disorders, mostly Parkinson's disease. During my Ph.D. at Louisiana State University I ran longitudinal studies of motor and cognitive outcomes and built the EEG signal-processing pipelines behind them. As a postdoctoral fellow in the Brain Recovery Lab at the MGH Institute of Health Professions, I fit multilevel mixed-effects models to longitudinal fMRI and TMS datasets for NIH-funded studies. Earlier, a Mitacs internship at Memorial University put me on a clinical feasibility study of a remote tele-ultrasound system, later published in the Journal of Ultrasound in Medicine.</p>
     <ul>
       <li>Addison, R. N., et al. (2023). Bilateral transfer of a visuomotor task in different workspace configurations. Journal of Motor Behavior.</li>
       <li>Gauss, T. M., Addison, R. N., et al. (2025). Wild blueberry supplementation and motor symptoms in Parkinson's disease. SFN 2025.</li>
@@ -138,11 +143,11 @@
 
     <h2>Toolkit</h2>
     <div class="tags">
-      <span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">MATLAB</span><span class="tag">Git</span><span class="tag">PyTorch</span><span class="tag">PyMC</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Bayesian inference</span><span class="tag">Causal inference</span><span class="tag">Mixed-effects models</span><span class="tag">Experimental design</span><span class="tag">A/B testing</span><span class="tag">Time series analysis</span><span class="tag">Signal processing</span><span class="tag">Data visualization</span><span class="tag">Stakeholder reporting</span><span class="tag">Reproducible pipelines</span>
+      <span class="tag">Clinical trial design</span><span class="tag">Bayesian inference</span><span class="tag">Causal inference</span><span class="tag">Biostatistics</span><span class="tag">Mixed-effects models</span><span class="tag">Experimental design</span><span class="tag">Real-world evidence</span><span class="tag">Longitudinal analysis</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">MATLAB</span><span class="tag">PyMC</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Time series analysis</span><span class="tag">Signal processing</span><span class="tag">Reproducible pipelines</span><span class="tag">Stakeholder reporting</span>
     </div>
 
     <h2 id="contact">Contact</h2>
-    <p>Open to conversations in data science and applied analytics, with particular depth in health, biopharma, and clinical research. The fastest way to reach me is email.</p>
+    <p>I am happy to talk about clinical research, health analytics, or data science work, especially anything touching clinical trials, biopharma, or real-world evidence. Email is the surest way to reach me.</p>
     <div class="contact">
       <a href="mailto:reuben.addison@gmail.com">Email</a>
       <a href="https://github.com/reubebe">GitHub</a>
