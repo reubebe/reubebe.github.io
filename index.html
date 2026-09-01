@@ -3,165 +3,787 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Reuben Addison, Ph.D.</title>
-<meta name="description" content="Reuben Addison, Ph.D. Clinical research scientist and quantitative researcher. Clinical trial design, Bayesian statistics, causal inference, and applied machine learning for clinical research, health analytics, and biopharma." />
+<meta name="theme-color" content="#060b12" />
+<script>document.documentElement.classList.add('js');</script>
+<title>Reuben Addison, Ph.D. | Clinical Research + Biomedical AI</title>
+<meta name="description" content="Reuben Addison, Ph.D. is a clinical research scientist and quantitative researcher working across clinical trial design, Bayesian statistics, biomedical AI, movement science, and reproducible health analytics." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#ffffff; --ink:#2a2a2a; --soft:#555555; --faint:#888888;
-    --hair:#e6e6e6; --accent:#7c4dc4; --accent-ink:#5f37a0;
-    --maxw:1040px; --sidebar:240px;
+    --bg:#060b12;
+    --bg-2:#09111b;
+    --panel:rgba(12,23,35,.72);
+    --panel-strong:#0d1824;
+    --text:#eef7f5;
+    --muted:#94a9ad;
+    --soft:#bdd0d1;
+    --line:rgba(153,255,226,.14);
+    --line-strong:rgba(153,255,226,.28);
+    --mint:#7df7d4;
+    --cyan:#70d8ff;
+    --violet:#9d8cff;
+    --warning:#ffd27d;
+    --maxw:1180px;
+    --radius:22px;
+    --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    --sans:"Space Grotesk",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
   }
-  *{box-sizing:border-box;}
-  html{scroll-behavior:smooth;}
-  body{margin:0;background:var(--bg);color:var(--ink);font-family:"Fira Sans",system-ui,Arial,sans-serif;font-size:15.5px;line-height:1.7;-webkit-font-smoothing:antialiased;}
-  a{color:var(--accent);text-decoration:none;}
-  a:hover{color:var(--accent-ink);text-decoration:underline;}
-  :focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
 
-  nav.top .inner{max-width:var(--maxw);margin:0 auto;padding:26px 30px 8px;display:flex;gap:30px;justify-content:center;flex-wrap:wrap;}
-  nav.top a{color:var(--accent);font-size:14px;font-weight:500;}
-
-  .layout{max-width:var(--maxw);margin:0 auto;padding:34px 30px 10px;display:grid;grid-template-columns:var(--sidebar) 1fr;gap:56px;align-items:start;}
-
-  aside{text-align:center;position:sticky;top:24px;}
-  .avatar{width:150px;height:150px;border-radius:50%;overflow:hidden;margin:0 auto 18px;border:1px solid var(--hair);background:linear-gradient(150deg,#efe9f7,#f2f0f4);display:flex;align-items:center;justify-content:center;}
-  .avatar img{width:100%;height:100%;object-fit:cover;display:block;}
-  .avatar .initials{font-weight:700;font-size:44px;color:var(--accent);}
-  aside h1{font-size:22px;font-weight:700;margin:0 0 8px;letter-spacing:.2px;}
-  aside .role{font-size:14px;color:var(--soft);margin:0 auto;max-width:210px;line-height:1.5;}
-  .rule{width:44px;height:2px;background:var(--accent);margin:16px auto;}
-  aside .blurb{font-size:13px;color:var(--faint);max-width:220px;margin:0 auto 20px;line-height:1.55;}
-  .links{list-style:none;padding:0;margin:0;display:inline-flex;flex-direction:column;gap:10px;text-align:left;}
-  .links a{color:var(--soft);font-size:13.5px;display:inline-flex;align-items:center;gap:9px;}
-  .links a:hover{color:var(--accent);text-decoration:none;}
-  .links svg{width:15px;height:15px;flex:0 0 auto;stroke:currentColor;fill:none;stroke-width:1.7;}
-
-  main{min-width:0;}
-  .hello{font-size:12px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin:2px 0 14px;}
-  .thesis{font-size:20px;font-weight:600;line-height:1.4;margin:0 0 22px;color:var(--ink);}
-  main p{margin:0 0 16px;color:#3d3d3d;}
-  main h2{font-size:20px;font-weight:700;margin:34px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--hair);}
-  main h3{font-size:15.5px;font-weight:600;margin:22px 0 6px;color:var(--ink);}
-  main ul{margin:0 0 16px;padding-left:20px;}
-  main li{margin:0 0 7px;color:#3d3d3d;}
-  .stack{font-size:13px;color:var(--faint);margin-top:6px;}
-  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:8px;}
-  .tag{font-size:12.5px;color:var(--soft);border:1px solid var(--hair);border-radius:999px;padding:4px 12px;}
-  .contact a{font-size:14px;display:inline-block;margin-right:20px;}
-
-  footer{text-align:center;padding:30px 20px 46px;color:var(--faint);font-size:12.5px;border-top:1px solid var(--hair);margin-top:34px;}
-
-  @media (max-width:760px){
-    .layout{grid-template-columns:1fr;gap:32px;}
-    aside{position:static;}
-    nav.top .inner{gap:18px;}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:90px}
+  body{
+    margin:0;
+    font-size:16.5px;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 14% 10%, rgba(112,216,255,.10), transparent 28rem),
+      radial-gradient(circle at 86% 20%, rgba(125,247,212,.08), transparent 30rem),
+      radial-gradient(circle at 50% 92%, rgba(157,140,255,.08), transparent 34rem),
+      var(--bg);
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.7;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
   }
-  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto;}}
+
+  body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+      linear-gradient(rgba(125,247,212,.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125,247,212,.035) 1px, transparent 1px);
+    background-size:48px 48px;
+    mask-image:linear-gradient(to bottom, black, transparent 76%);
+    z-index:-2;
+  }
+
+  body:after{
+    content:"";
+    position:fixed;
+    width:520px;
+    height:520px;
+    border-radius:50%;
+    top:var(--glow-y,-220px);
+    left:var(--glow-x,-220px);
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle, rgba(112,216,255,.06), transparent 64%);
+    pointer-events:none;
+    z-index:-1;
+  }
+
+  ::selection{background:rgba(125,247,212,.22);color:#fff}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%}
+  button{font:inherit}
+  :focus-visible{outline:2px solid var(--mint);outline-offset:4px}
+
+  .shell{width:min(calc(100% - 40px),var(--maxw));margin:0 auto}
+  .mono{font-family:var(--mono)}
+  .eyebrow{
+    font:600 13px/1.2 var(--mono);
+    color:var(--mint);
+    letter-spacing:.12em;
+    text-transform:uppercase;
+  }
+
+  .topbar{
+    position:sticky;
+    top:0;
+    z-index:30;
+    backdrop-filter:blur(18px);
+    background:rgba(6,11,18,.72);
+    border-bottom:1px solid rgba(255,255,255,.055);
+  }
+  .nav{
+    min-height:72px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:11px;
+    font:600 15px/1 var(--mono);
+    letter-spacing:.03em;
+  }
+  .brand-mark{
+    width:31px;
+    height:31px;
+    display:grid;
+    place-items:center;
+    border:1px solid var(--line-strong);
+    border-radius:9px;
+    color:var(--mint);
+    background:rgba(125,247,212,.05);
+    box-shadow:inset 0 0 20px rgba(125,247,212,.04);
+  }
+  .nav-links{display:flex;align-items:center;gap:25px;color:var(--muted);font-size:14.5px}
+  .nav-links a{transition:.2s ease}
+  .nav-links a:hover,.nav-links a.active{color:var(--text)}
+  .nav-links a.active:after{
+    content:"";
+    display:block;
+    height:1px;
+    margin-top:5px;
+    background:var(--mint);
+    box-shadow:0 0 8px var(--mint);
+  }
+  .nav-cta{
+    padding:9px 14px;
+    border:1px solid var(--line-strong);
+    border-radius:10px;
+    color:var(--mint)!important;
+    font:500 13px/1 var(--mono);
+    background:rgba(125,247,212,.04);
+  }
+
+  .hero{
+    min-height:calc(100svh - 72px);
+    display:grid;
+    grid-template-columns:minmax(0,1.18fr) minmax(320px,.82fr);
+    gap:68px;
+    align-items:center;
+    padding:78px 0 70px;
+    position:relative;
+  }
+  .status{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:7px 11px;
+    border:1px solid var(--line);
+    border-radius:999px;
+    color:var(--soft);
+    background:rgba(255,255,255,.018);
+    font:500 12px/1 var(--mono);
+    margin-bottom:28px;
+  }
+  .pulse{
+    width:7px;height:7px;border-radius:50%;background:var(--mint);
+    box-shadow:0 0 0 0 rgba(125,247,212,.45);
+    animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{70%{box-shadow:0 0 0 8px rgba(125,247,212,0)}100%{box-shadow:0 0 0 0 rgba(125,247,212,0)}}
+  .hero h1{
+    margin:0;
+    max-width:800px;
+    font-size:clamp(3.1rem,7.2vw,6.6rem);
+    line-height:.93;
+    letter-spacing:-.067em;
+    font-weight:600;
+  }
+  .hero h1 .gradient{
+    background:linear-gradient(100deg,var(--mint),var(--cyan) 52%,#d7ccff);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .hero-copy{
+    max-width:690px;
+    margin:30px 0 0;
+    color:var(--soft);
+    font-size:clamp(18px,2vw,21px);
+    line-height:1.65;
+  }
+  .hero-copy strong{color:var(--text);font-weight:500}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+  .button{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    min-height:44px;
+    padding:0 17px;
+    border-radius:11px;
+    border:1px solid var(--line);
+    font-size:14px;
+    font-weight:600;
+    transition:transform .2s ease,border-color .2s ease,background .2s ease;
+  }
+  .button:hover{transform:translateY(-2px);border-color:var(--line-strong)}
+  .button.primary{background:var(--mint);color:#052018;border-color:var(--mint)}
+  .button.secondary{background:rgba(255,255,255,.025);color:var(--text)}
+  .button svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.8}
+
+  .terminal-wrap{position:relative}
+  .terminal-wrap:before{
+    content:"";
+    position:absolute;
+    inset:11% -8% -8% 12%;
+    background:radial-gradient(circle,rgba(125,247,212,.13),transparent 66%);
+    filter:blur(18px);
+    z-index:-1;
+  }
+  .terminal{
+    border:1px solid var(--line-strong);
+    border-radius:20px;
+    overflow:hidden;
+    background:linear-gradient(155deg,rgba(13,24,36,.96),rgba(7,14,22,.92));
+    box-shadow:0 28px 80px rgba(0,0,0,.38),inset 0 0 38px rgba(125,247,212,.025);
+    transform:perspective(1000px) rotateY(-2.5deg) rotateX(1.5deg);
+  }
+  .terminal-head{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 16px;border-bottom:1px solid var(--line);
+    color:#7d9298;font:500 10px/1 var(--mono);letter-spacing:.06em;
+  }
+  .dots{display:flex;gap:7px}.dots i{width:7px;height:7px;border-radius:50%;background:#33434d}.dots i:nth-child(1){background:#ff8b85}.dots i:nth-child(2){background:#ffd27d}.dots i:nth-child(3){background:#7df7d4}
+  .terminal-body{padding:23px 22px 26px;font:400 13px/1.8 var(--mono);color:#9fb3b7;min-height:356px}
+  .command{color:var(--mint)}.value{color:#e8f4f2}.dim{color:#60767d}.cyan{color:var(--cyan)}.violet{color:#b9adff}
+  .terminal-line{display:block;margin:0 0 7px}
+  .terminal-space{height:10px}
+  .cursor{display:inline-block;width:7px;height:15px;background:var(--mint);vertical-align:-3px;animation:blink 1s steps(2,start) infinite}@keyframes blink{50%{opacity:0}}
+
+  .metrics{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    margin-top:34px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:15px;
+    overflow:hidden;
+    max-width:690px;
+  }
+  .metric{background:rgba(6,11,18,.96);padding:17px 18px}
+  .metric b{display:block;color:var(--text);font-size:17px;font-weight:600;margin-bottom:2px}
+  .metric span{font:400 10px/1.5 var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+
+  section{padding:92px 0;border-top:1px solid rgba(255,255,255,.055)}
+  .section-head{display:grid;grid-template-columns:180px 1fr;gap:30px;align-items:start;margin-bottom:42px}
+  .section-head h2{margin:-8px 0 0;font-size:clamp(2rem,4.7vw,3.9rem);line-height:1.03;letter-spacing:-.045em;font-weight:600;max-width:800px}
+  .section-intro{margin:17px 0 0;color:var(--muted);max-width:760px;font-size:17.5px}
+
+  .about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:26px}
+  .glass{
+    background:linear-gradient(145deg,rgba(255,255,255,.032),rgba(255,255,255,.012));
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+  }
+  .about-copy{padding:32px}
+  .about-copy p{margin:0 0 18px;color:var(--soft);font-size:18px}
+  .about-copy p:last-child{margin-bottom:0}
+  .about-copy strong{color:var(--text);font-weight:500}
+  .identity-card{padding:30px;position:relative;overflow:hidden}
+  .identity-card:before{content:"";position:absolute;width:180px;height:180px;border:1px solid var(--line);border-radius:50%;right:-90px;top:-80px;box-shadow:0 0 0 28px rgba(125,247,212,.018),0 0 0 55px rgba(125,247,212,.012)}
+  .portrait{
+    width:96px;height:96px;border-radius:20px;overflow:hidden;
+    border:1px solid var(--line-strong);background:#0c1924;
+    display:grid;place-items:center;margin-bottom:23px;position:relative;
+  }
+  .portrait img{width:100%;height:100%;object-fit:cover;display:block}
+  .portrait .initials{display:none;font:600 29px/1 var(--mono);color:var(--mint)}
+  .identity-card h3{font-size:21px;margin:0 0 4px}.identity-card .role{color:var(--muted);font-size:15px;margin:0 0 22px}
+  .identity-list{display:grid;gap:11px;margin-top:18px}.identity-row{display:grid;grid-template-columns:82px 1fr;gap:12px;font:400 11px/1.6 var(--mono)}.identity-row span:first-child{color:#61767d;text-transform:uppercase}.identity-row span:last-child{color:#c9d9d9}
+
+  .cap-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+  .cap-card{padding:27px;min-height:250px;position:relative;overflow:hidden;transition:transform .22s ease,border-color .22s ease;background .22s ease}
+  .cap-card:hover{transform:translateY(-4px);border-color:var(--line-strong);background:linear-gradient(145deg,rgba(125,247,212,.05),rgba(255,255,255,.015))}
+  .cap-num{font:500 12px/1 var(--mono);color:var(--mint);margin-bottom:52px}
+  .cap-card h3{font-size:23px;line-height:1.16;margin:0 0 13px;letter-spacing:-.025em}
+  .cap-card p{margin:0;color:var(--muted);font-size:15.5px;max-width:470px}
+  .cap-stack{margin-top:17px;font:400 10px/1.5 var(--mono);color:#687e84;letter-spacing:.03em}
+
+  .projects{display:grid;gap:17px}
+  .project{
+    display:grid;
+    grid-template-columns:170px 1fr 180px;
+    gap:28px;
+    align-items:start;
+    padding:28px;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    background:rgba(255,255,255,.018);
+    transition:transform .22s ease,border-color .22s ease,background .22s ease;
+  }
+  .project:hover{transform:translateY(-3px);border-color:var(--line-strong);background:rgba(125,247,212,.025)}
+  .project-index{font:500 11px/1.5 var(--mono);color:var(--mint);padding-top:5px}
+  .project-index span{display:block;color:#60767d;margin-top:5px}
+  .project h3{margin:0 0 10px;font-size:26px;line-height:1.2;letter-spacing:-.03em}
+  .project p{margin:0;color:var(--muted);font-size:15.5px;max-width:680px}
+  .project-meta{font:400 10px/1.7 var(--mono);color:#779096;text-align:right}
+  .project-link{display:inline-flex;align-items:center;gap:6px;color:var(--text);margin-top:13px;font-size:14px;font-weight:600}.project-link:hover{color:var(--mint)}
+
+  .timeline{position:relative;margin-left:5px}
+  .timeline:before{content:"";position:absolute;left:9px;top:8px;bottom:11px;width:1px;background:linear-gradient(var(--mint),var(--line),transparent)}
+  .timeline-item{display:grid;grid-template-columns:48px 170px 1fr;gap:23px;padding:0 0 37px;position:relative}
+  .timeline-item:last-child{padding-bottom:0}
+  .node{width:19px;height:19px;border:1px solid var(--line-strong);border-radius:50%;background:var(--bg);position:relative;z-index:2}.node:after{content:"";position:absolute;inset:5px;border-radius:50%;background:var(--mint);box-shadow:0 0 10px rgba(125,247,212,.35)}
+  .timeline-date{font:400 11px/1.6 var(--mono);color:#71878d;padding-top:1px}
+  .timeline-copy h3{margin:0 0 3px;font-size:19px}.timeline-copy .org{font-size:14px;color:var(--mint);margin-bottom:8px}.timeline-copy p{margin:0;color:var(--muted);font-size:15px;max-width:740px}
+
+  .pub-toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-bottom:19px;flex-wrap:wrap}
+  .pub-filters{display:flex;gap:8px;flex-wrap:wrap}
+  .filter{
+    cursor:pointer;border:1px solid var(--line);background:rgba(255,255,255,.018);color:var(--muted);
+    border-radius:999px;padding:8px 12px;font:500 11.5px/1 var(--mono);transition:.2s ease
+  }
+  .filter:hover,.filter.active{color:#052018;background:var(--mint);border-color:var(--mint)}
+  .scholar-link{font:500 13px/1 var(--mono);color:var(--cyan)}
+  .pub-list{display:grid;gap:10px}
+  .pub{
+    display:grid;grid-template-columns:82px 1fr 130px;gap:20px;align-items:start;
+    padding:21px 23px;border:1px solid var(--line);border-radius:15px;background:rgba(255,255,255,.012)
+  }
+  .pub[hidden]{display:none}
+  .pub-year{font:500 12px/1.5 var(--mono);color:var(--mint)}
+  .pub-title{font-size:16.5px;line-height:1.5;color:#dae8e6;margin-bottom:4px}
+  .pub-citation{color:var(--muted);font-size:14px;line-height:1.55}
+  .pub-status{justify-self:end;text-align:right}
+  .badge{display:inline-block;padding:6px 9px;border-radius:999px;border:1px solid var(--line);font:500 10px/1 var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+  .badge.review{border-color:rgba(255,210,125,.25);color:var(--warning);background:rgba(255,210,125,.055)}
+  .badge.peer{border-color:rgba(125,247,212,.23);color:var(--mint);background:rgba(125,247,212,.045)}
+  .badge.talk{border-color:rgba(157,140,255,.24);color:#c5bbff;background:rgba(157,140,255,.05)}
+  .doi{display:block;margin-top:7px;color:#6c858b;font:400 10px/1.4 var(--mono)}
+
+  .toolkit-grid{display:flex;flex-wrap:wrap;gap:8px}
+  .tag{border:1px solid var(--line);border-radius:10px;padding:9px 12px;background:rgba(255,255,255,.015);font:400 11.5px/1 var(--mono);color:#91a7aa;transition:.18s ease}
+  .tag:hover{border-color:var(--line-strong);color:var(--soft);transform:translateY(-1px)}
+
+  .contact-panel{
+    position:relative;overflow:hidden;padding:45px;
+    display:grid;grid-template-columns:1fr auto;gap:35px;align-items:end;
+    background:linear-gradient(135deg,rgba(125,247,212,.075),rgba(112,216,255,.035) 45%,rgba(157,140,255,.04));
+    border:1px solid var(--line-strong);border-radius:28px
+  }
+  .contact-panel:after{content:"RA";position:absolute;right:-12px;top:-38px;font-size:190px;line-height:1;font-family:var(--mono);font-weight:600;color:rgba(255,255,255,.018);letter-spacing:-.13em;pointer-events:none}
+  .contact-panel h2{font-size:clamp(2.2rem,5vw,4.4rem);line-height:1;letter-spacing:-.055em;margin:9px 0 16px;max-width:760px}
+  .contact-panel p{margin:0;color:var(--soft);max-width:650px}
+  .contact-links{display:flex;flex-direction:column;align-items:flex-end;gap:11px;position:relative;z-index:2}
+  .contact-links a{font:500 12px/1 var(--mono);color:var(--soft)}.contact-links a:hover{color:var(--mint)}
+
+  footer{padding:31px 0 38px;color:#5d7379;font:400 10px/1.7 var(--mono)}
+  .footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center}.footer-right{display:flex;gap:18px}
+
+  .reveal{opacity:1;transform:none}.js .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}.js .reveal.visible{opacity:1;transform:none}
+
+  @media(max-width:900px){
+    .nav-links a:not(.nav-cta){display:none}
+    .hero{grid-template-columns:1fr;gap:42px;min-height:auto;padding-top:70px}.terminal{transform:none;max-width:600px}
+    .section-head{grid-template-columns:1fr;gap:15px}.section-head h2{margin:0}
+    .about-grid{grid-template-columns:1fr}.identity-card{display:grid;grid-template-columns:auto 1fr;column-gap:22px}.identity-list{grid-column:1/-1}
+    .project{grid-template-columns:90px 1fr}.project-meta{grid-column:2;text-align:left}
+  }
+  @media(max-width:650px){
+    .shell{width:min(calc(100% - 26px),var(--maxw))}
+    .hero h1{font-size:clamp(3rem,16vw,5rem)}
+    .metrics{grid-template-columns:1fr}.metric{padding:13px 16px}
+    section{padding:72px 0}
+    .cap-grid{grid-template-columns:1fr}.cap-card{min-height:0}.cap-num{margin-bottom:28px}
+    .project{grid-template-columns:1fr;gap:12px;padding:22px}.project-meta{grid-column:auto}.project-index span{display:inline;margin-left:10px}
+    .timeline-item{grid-template-columns:34px 1fr;gap:14px}.timeline-date{grid-column:2}.timeline-copy{grid-column:2}.timeline:before{left:9px}
+    .pub{grid-template-columns:1fr;gap:9px}.pub-status{justify-self:start;text-align:left}
+    .contact-panel{padding:31px 24px;grid-template-columns:1fr}.contact-links{align-items:flex-start}
+    .footer-inner{flex-direction:column;align-items:flex-start}
+    .identity-card{display:block}
+  }
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.pulse,.cursor{animation:none}.js .reveal{opacity:1;transform:none;transition:none}body:after{display:none}}
 </style>
 </head>
 <body>
 
-<nav class="top" aria-label="Primary">
-  <div class="inner">
-    <a href="#about">About</a>
-    <a href="#do">What I Do</a>
-    <a href="#work">Work</a>
-    <a href="#research">Research</a>
-    <a href="#contact">Contact</a>
-    <a href="#">CV</a>
+<header class="topbar">
+  <nav class="nav shell" aria-label="Primary navigation">
+    <a class="brand" href="#top" aria-label="Reuben Addison home">
+      <span class="brand-mark">RA</span>
+      <span>reuben.addison<span style="color:var(--mint)">/research</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#publications">Publications</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en" target="_blank" rel="noopener">Scholar ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+  <div class="shell hero">
+    <div>
+      <div class="status"><span class="pulse"></span> clinical research + quantitative science</div>
+      <h1>I build <span class="gradient">evidence systems</span> for clinical decisions.</h1>
+      <p class="hero-copy">I am <strong>Reuben Addison</strong>, a clinical research scientist working where Bayesian statistics, biomedical AI, movement science, and clinical trial design meet. I care about methods that are rigorous enough for skeptical reviewers and clear enough to support a real decision.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#work">Explore selected work
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a class="button secondary" href="mailto:reuben.addison@gmail.com">Start a conversation</a>
+      </div>
+      <div class="metrics" aria-label="Profile highlights">
+        <div class="metric"><b>Ph.D. + M.S.</b><span>Motor behavior + analytics</span></div>
+        <div class="metric"><b>Bayesian + AI/ML</b><span>Evidence to prediction</span></div>
+        <div class="metric"><b>Clinical + movement</b><span>Trials, signals, outcomes</span></div>
+      </div>
+    </div>
+
+    <div class="terminal-wrap" aria-hidden="true">
+      <div class="terminal">
+        <div class="terminal-head">
+          <div class="dots"><i></i><i></i><i></i></div>
+          <span>research_profile.sh</span>
+        </div>
+        <div class="terminal-body">
+          <span class="terminal-line"><span class="command">$ whoami</span></span>
+          <span class="terminal-line value">Reuben Newton Addison, Ph.D.</span>
+          <div class="terminal-space"></div>
+          <span class="terminal-line"><span class="command">$ focus --current</span></span>
+          <span class="terminal-line"><span class="dim">01</span> <span class="cyan">clinical trial design</span></span>
+          <span class="terminal-line"><span class="dim">02</span> <span class="cyan">Bayesian inference</span></span>
+          <span class="terminal-line"><span class="dim">03</span> <span class="cyan">biomedical machine learning</span></span>
+          <span class="terminal-line"><span class="dim">04</span> <span class="cyan">movement disorders + signals</span></span>
+          <div class="terminal-space"></div>
+          <span class="terminal-line"><span class="command">$ current --build</span></span>
+          <span class="terminal-line"><span class="violet">OpenTrial</span> :: evidence-grounded Bayesian trial design</span>
+          <span class="terminal-line"><span class="violet">KinetiScan</span> :: markerless 3D motion analysis</span>
+          <span class="terminal-line"><span class="violet">ECG-SQA</span> :: signal quality classification</span>
+          <div class="terminal-space"></div>
+          <span class="terminal-line"><span class="command">$ principle</span></span>
+          <span class="terminal-line value">make uncertainty visible. make evidence traceable.<span class="cursor"></span></span>
+        </div>
+      </div>
+    </div>
   </div>
-</nav>
 
-<div class="layout">
+  <section id="about">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="eyebrow">01 / About</div>
+        <div>
+          <h2>Quantitative work that still remembers the clinical question.</h2>
+          <p class="section-intro">My work sits between study design, statistical reasoning, machine learning, and the practical realities of biomedical data.</p>
+        </div>
+      </div>
 
-  <aside>
-    <div class="avatar">
-      <!-- Put photo.JPG next to index.html. If missing, initials show instead. -->
-      <img src="photo.JPG" alt="Reuben Addison"
-           onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <span class="initials" style="display:none;">RA</span>
+      <div class="about-grid">
+        <article class="glass about-copy reveal">
+          <p>I came into data science through <strong>movement-disorders research</strong>, not through a fascination with models for their own sake. That matters to how I work. I start with the question a clinician, investigator, or study team is actually trying to answer, then choose the design and analysis that can answer it honestly.</p>
+          <p>Over the years that has meant running Parkinson's disease studies, building EEG and neuroimaging pipelines, fitting longitudinal and multilevel models, and more recently developing <strong>Bayesian trial-design and biomedical AI systems</strong>. I am especially drawn to problems where uncertainty, provenance, reproducibility, and interpretation matter as much as raw predictive performance.</p>
+          <p>I currently lead the Motor Control Lab at DePauw University and work with the Chinese American Biopharmaceutical Society's data-science program. I completed an M.S. in Analytics at Georgia Tech in 2026, building on a Ph.D. in Kinesiology focused on motor behavior and neuroscience.</p>
+        </article>
+
+        <aside class="glass identity-card reveal">
+          <div class="portrait">
+            <img src="photo.JPG" alt="Portrait of Reuben Addison" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="initials">RA</span>
+          </div>
+          <div>
+            <h3>Reuben Addison</h3>
+            <p class="role">Clinical Research Scientist · Quantitative Researcher</p>
+          </div>
+          <div class="identity-list">
+            <div class="identity-row"><span>Based</span><span>Greencastle, Indiana</span></div>
+            <div class="identity-row"><span>Current</span><span>DePauw University + CABS</span></div>
+            <div class="identity-row"><span>Training</span><span>Ph.D. Motor Behavior · M.S. Analytics</span></div>
+            <div class="identity-row"><span>Methods</span><span>Bayesian statistics · ML/DL · longitudinal models</span></div>
+          </div>
+        </aside>
+      </div>
     </div>
-    <h1>Reuben Addison</h1>
-    <p class="role">Clinical research scientist &amp; quantitative researcher</p>
-    <div class="rule"></div>
-    <p class="blurb">Clinical trial design, Bayesian statistics, and causal inference for clinical research, health analytics, and biopharma.</p>
+  </section>
 
-    <ul class="links">
-      <li><a href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en">
-        <svg viewBox="0 0 24 24"><path d="M12 4L2 9l10 5 8-4v6"/><path d="M6 12v4c0 1.5 2.7 3 6 3s6-1.5 6-3v-4"/></svg>Google Scholar</a></li>
-      <li><a href="https://www.linkedin.com/in/rnaddison/">
-        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 11v5M8 8v.01M12 16v-3a2 2 0 0 1 4 0v3"/></svg>LinkedIn</a></li>
-      <li><a href="https://github.com/reubebe">
-        <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.5 11.5 0 0 0-6 0C6.3 2.3 5.3 2.6 5.3 2.6a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 3.9 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a></li>
-      <li><a href="mailto:reuben.addison@gmail.com">
-        <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>Email</a></li>
-    </ul>
-  </aside>
-
-  <main id="about">
-    <p class="hello">Hello world!</p>
-    <p class="thesis">I help clinical research questions get answers that hold up.</p>
-
-    <p>I am a clinical research scientist with a quantitative bent. For about seven years I have designed studies, built the Bayesian and causal models to make sense of them, and done the less glamorous work of turning tangled results into something a clinician or a study team can actually decide on. Most of that has been in clinical trials, movement-disorders research, and health data where the stakes are real and the data rarely cooperates.</p>
-
-    <p>What I care about is whether a finding survives contact with a skeptical reviewer, not just whether the model runs. These days I direct the Motor Control Lab at DePauw, work as a data science intern with the Chinese American Biopharmaceutical Society, and just finished an M.S. in Analytics at Georgia Tech, on top of a Ph.D. built on clinical movement-disorders research.</p>
-
-    <h2 id="do">What I Do</h2>
-    <h3>Clinical Trial Design And Evidence Generation</h3>
-    <p>I design Bayesian and group-sequential trials and write the analysis plans behind them, working out how a design behaves, through power, prior sensitivity, and predictive probability of success, before anyone commits to it. I also build the evidence synthesis that feeds those designs from clinical and public data.</p>
-    <h3>Health Analytics And Study Design</h3>
-    <p>I design clinical and observational studies and use causal methods to get honest answers out of real-world data, the kind of analysis that turns a vague research question into something a clinician or stakeholder can act on.</p>
-    <h3>Bayesian And Causal Inference</h3>
-    <p>Multilevel Bayesian and mixed-effects models are my default tools, largely because they let me be honest about uncertainty and carry it all the way through to the decision instead of hiding it behind a point estimate.</p>
-    <h3>Machine Learning And Deep Learning</h3>
-    <p>When the problem calls for it, I reach for CNNs, transformers, and gradient-boosted models, usually on high-dimensional clinical or physiological data where getting the prediction right matters less than understanding why it works.</p>
-    <h3>Signals And Time Series</h3>
-    <p>A lot of my work starts as messy physiological signals, ECG, EEG, motion capture, that have to be cleaned and made trustworthy before anything else can happen. I build the pipelines that do that reproducibly.</p>
-
-    <h2 id="work">Selected Work</h2>
-    <h3>OpenTrial, a Bayesian Trial Design Engine</h3>
-    <p>OpenTrial takes the structured inputs of a trial and turns them into a cited, reproducible design report, the sort of thing a study team can actually defend. It pulls evidence-derived priors with source-level provenance from ClinicalTrials.gov, PubMed, openFDA, and DailyMed, then produces power grids, prior-sensitivity analysis, predictive probability-of-success criteria, and simulation-calibrated group-sequential designs. I built it during my internship with the Chinese American Biopharmaceutical Society. <a href="https://github.com/ds4cabs/OpenTrial">View repository</a>.</p>
-    <p class="stack">Python, Streamlit, Bayesian inference, simulation, clinical data APIs</p>
-    <h3>KinetiScan, Markerless 3D Motion Analysis</h3>
-    <p>KinetiScan recovers 3D joint positions from a single ordinary camera, no marker suit, no lab full of hardware. The trick is a distance-conditioned transformer that lifts 2D landmarks to metric 3D pose; I trained it across four public datasets and then held it to a clinical standard, validating against marker-based Vicon and Plug-in-Gait references. Joint-angle waveforms agreed at r&nbsp;=&nbsp;0.97&ndash;0.99, test-retest reliability held at ICC&nbsp;0.79&ndash;0.94, and gait events landed at F1&nbsp;0.92. It runs in a browser, with Python-to-JavaScript numerical parity so the deployed version matches the research code. <a href="https://github.com/reubebe">View on GitHub</a>.</p>
-    <p class="stack">Python, PyTorch, ONNX, deep learning, computer vision, clinical validation</p>
-    <h3>ECG Signal Quality Classification</h3>
-    <p>A deep-learning pipeline for cardiac signal quality on the PTB-XL benchmark: a CNN-Transformer hybrid ensemble against L1-regularized logistic regression, MLP, and CNN baselines, with stratified cross-validation, Youden-index threshold optimization, and saliency and per-lead importance analysis end to end. <a href="https://github.com/reubebe/ECG-signal-quality-detection">View repository</a>.</p>
-    <p class="stack">Python, PyTorch, deep learning, signal processing, interpretability</p>
-
-    <h2 id="research">Domain Background</h2>
-    <p>The research I came up through is in neurological movement disorders, mostly Parkinson's disease. During my Ph.D. at Louisiana State University I ran longitudinal studies of motor and cognitive outcomes and built the EEG signal-processing pipelines behind them. As a postdoctoral fellow in the Brain Recovery Lab at the MGH Institute of Health Professions, I fit multilevel mixed-effects models to longitudinal fMRI and TMS datasets for NIH-funded studies. Earlier, a Mitacs internship at Memorial University put me on a clinical feasibility study of a remote tele-ultrasound system, later published in the Journal of Ultrasound in Medicine.</p>
-    <ul>
-      <li>Addison, R. N., et al. (2023). Bilateral transfer of a visuomotor task in different workspace configurations. Journal of Motor Behavior.</li>
-      <li>Gauss, T. M., Addison, R. N., et al. (2025). Wild blueberry supplementation and motor symptoms in Parkinson's disease. SFN 2025.</li>
-      <li>Gauss, T. M., Addison, R. N., et al. (2024). Subtyping Parkinson's disease by symptom dominance reveals differences in postural sway. NASPSA 2024.</li>
-      <li>Smith, A., Addison, R., et al. (2018). Remote mentoring using telemedicine platforms. Journal of Ultrasound in Medicine.</li>
-    </ul>
-
-    <h2>Toolkit</h2>
-    <div class="tags">
-      <span class="tag">Clinical trial design</span><span class="tag">Bayesian inference</span><span class="tag">Causal inference</span><span class="tag">Biostatistics</span><span class="tag">Mixed-effects models</span><span class="tag">Experimental design</span><span class="tag">Real-world evidence</span><span class="tag">Longitudinal analysis</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">MATLAB</span><span class="tag">PyMC</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">Time series analysis</span><span class="tag">Signal processing</span><span class="tag">Reproducible pipelines</span><span class="tag">Stakeholder reporting</span>
+  <section id="capabilities">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="eyebrow">02 / What I do</div>
+        <div>
+          <h2>From evidence synthesis to models that can survive scrutiny.</h2>
+        </div>
+      </div>
+      <div class="cap-grid">
+        <article class="glass cap-card reveal">
+          <div class="cap-num">01 // TRIALS</div>
+          <h3>Clinical Trial Design + Evidence Generation</h3>
+          <p>I build Bayesian and group-sequential trial designs, evaluate power and predictive assurance, test prior sensitivity, and connect design assumptions back to the evidence that supports them.</p>
+          <div class="cap-stack">Bayesian design · simulation · assurance · evidence synthesis</div>
+        </article>
+        <article class="glass cap-card reveal">
+          <div class="cap-num">02 // INFERENCE</div>
+          <h3>Bayesian + Longitudinal Modeling</h3>
+          <p>I use multilevel, mixed-effects, and treatment-response models to carry uncertainty through the analysis rather than burying it behind a single estimate.</p>
+          <div class="cap-stack">PyMC · R · mixed effects · repeated measures · treatment effects</div>
+        </article>
+        <article class="glass cap-card reveal">
+          <div class="cap-num">03 // AI</div>
+          <h3>Biomedical Machine Learning</h3>
+          <p>I develop CNN, Transformer, ensemble, and interpretable ML pipelines for clinical, physiological, and movement data, with validation designed around the scientific use case.</p>
+          <div class="cap-stack">PyTorch · Transformers · CNNs · XGBoost · interpretability</div>
+        </article>
+        <article class="glass cap-card reveal">
+          <div class="cap-num">04 // SIGNALS</div>
+          <h3>Movement + Physiological Signals</h3>
+          <p>My research background includes Parkinson's disease, EEG, fMRI, TMS, ECG, motion capture, and markerless pose estimation. I build the preprocessing and quality-control steps that make downstream analysis defensible.</p>
+          <div class="cap-stack">EEG · ECG · fMRI · TMS · biomechanics · computer vision</div>
+        </article>
+      </div>
     </div>
+  </section>
 
-    <h2 id="contact">Contact</h2>
-    <p>I am happy to talk about clinical research, health analytics, or data science work, especially anything touching clinical trials, biopharma, or real-world evidence. Email is the surest way to reach me.</p>
-    <div class="contact">
-      <a href="mailto:reuben.addison@gmail.com">Email</a>
-      <a href="https://github.com/reubebe">GitHub</a>
-      <a href="https://www.linkedin.com/in/rnaddison/">LinkedIn</a>
-      <a href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en">Scholar</a>
-      <a href="#">CV</a>
+  <section id="work">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="eyebrow">03 / Selected work</div>
+        <div>
+          <h2>Research systems built to be used, checked, and challenged.</h2>
+          <p class="section-intro">A few projects that capture the kind of problems I like: technically demanding, clinically grounded, and easier to trust when the assumptions are visible.</p>
+        </div>
+      </div>
+
+      <div class="projects">
+        <article class="project reveal">
+          <div class="project-index">PROJECT 01<span>2026</span></div>
+          <div>
+            <h3>OpenTrial</h3>
+            <p>An evidence-grounded Bayesian trial-design engine that curates ClinicalTrials.gov, PubMed, openFDA, and DailyMed into source-cited design inputs. It produces evidence-derived priors, power and assurance analysis, prior-sensitivity checks, and simulation-based design outputs that a study team can trace back to the underlying evidence.</p>
+            <a class="project-link" href="https://github.com/ds4cabs/OpenTrial" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+          <div class="project-meta">Python<br>Streamlit<br>Bayesian inference<br>Clinical data APIs<br>Simulation</div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-index">PROJECT 02<span>ONGOING</span></div>
+          <div>
+            <h3>KinetiScan</h3>
+            <p>A markerless 3D motion-analysis pipeline that lifts 2D pose into metric 3D coordinates from ordinary camera input. The research focuses on practical validation, numerical parity between research and deployment code, and a path toward accessible movement analysis outside a traditional motion-capture lab.</p>
+            <a class="project-link" href="https://github.com/reubebe" target="_blank" rel="noopener">View GitHub ↗</a>
+          </div>
+          <div class="project-meta">Python<br>PyTorch<br>ONNX<br>Computer vision<br>Biomechanics</div>
+        </article>
+
+        <article class="project reveal">
+          <div class="project-index">PROJECT 03<span>BIOMEDICAL AI</span></div>
+          <div>
+            <h3>ECG Signal Quality Classification</h3>
+            <p>A clinical signal-quality pipeline on the PTB-XL benchmark comparing a CNN-Transformer ensemble with interpretable statistical and neural baselines. The workflow includes uncertainty-aware modeling, threshold optimization, saliency analysis, and lead-level interpretation.</p>
+            <a class="project-link" href="https://github.com/reubebe/ECG-signal-quality-detection" target="_blank" rel="noopener">View repository ↗</a>
+          </div>
+          <div class="project-meta">PyTorch<br>Signal processing<br>Transformers<br>Interpretability<br>PTB-XL</div>
+        </article>
+      </div>
     </div>
-  </main>
+  </section>
 
-</div>
+  <section id="experience">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="eyebrow">04 / Trajectory</div>
+        <div><h2>Clinical research first. Computation made it broader.</h2></div>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item reveal">
+          <div class="node"></div><div class="timeline-date">2026 · present</div>
+          <div class="timeline-copy"><h3>Data Science Intern</h3><div class="org">Chinese American Biopharmaceutical Society</div><p>Developing OpenTrial and working across clinical evidence, trial design, biomedical data, and regulatory-science problems in a remote biopharma data-science program.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="node"></div><div class="timeline-date">2023 · present</div>
+          <div class="timeline-copy"><h3>Assistant Professor of Kinesiology</h3><div class="org">DePauw University</div><p>Lead the Motor Control Lab, design IRB-governed studies, teach biomechanics, motor control, and analytics, and apply statistical and machine-learning methods to clinical and movement data.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="node"></div><div class="timeline-date">2022 · 2023</div>
+          <div class="timeline-copy"><h3>Postdoctoral Research Fellow</h3><div class="org">MGH Institute of Health Professions · Brain Recovery Lab</div><p>Worked with longitudinal fMRI and TMS data in NIH-funded neurological research, including preprocessing, multilevel analysis, and research mentorship.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="node"></div><div class="timeline-date">2017 · 2022</div>
+          <div class="timeline-copy"><h3>Doctoral Researcher</h3><div class="org">Louisiana State University</div><p>Studied visuomotor adaptation and Parkinson's disease, designed behavioral and treatment-response studies, and developed EEG signal-processing and statistical workflows.</p></div>
+        </article>
+        <article class="timeline-item reveal">
+          <div class="node"></div><div class="timeline-date">2015 · 2016</div>
+          <div class="timeline-copy"><h3>Mitacs Accelerate Intern</h3><div class="org">Memorial University of Newfoundland</div><p>Evaluated a tele-ultrasound system for remote operations in a funded clinical-feasibility project that later produced a peer-reviewed publication.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="publications">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="eyebrow">05 / Research output</div>
+        <div>
+          <h2>Selected publications, manuscripts, and presentations.</h2>
+          <p class="section-intro">Work spanning motor learning, Parkinson's disease, neural signals, dystonia, and telemedicine.</p>
+        </div>
+      </div>
+
+      <div class="pub-toolbar reveal">
+        <div class="pub-filters" aria-label="Filter publications">
+          <button class="filter active" data-filter="all">All</button>
+          <button class="filter" data-filter="peer">Peer reviewed</button>
+          <button class="filter" data-filter="review">Manuscripts</button>
+          <button class="filter" data-filter="talk">Presentations</button>
+        </div>
+        <a class="scholar-link" href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+      </div>
+
+      <div class="pub-list">
+        <article class="pub reveal" data-type="review">
+          <div class="pub-year">2026</div>
+          <div>
+            <div class="pub-title">Evidence for preserved gait consistency after wild blueberry ingestion by individuals with Parkinson's disease</div>
+            <div class="pub-citation">Hondzinski, J., et al., with R. N. Addison as co-author. Submitted to <em>Journal of Parkinson's Disease</em>. Manuscript PKN-26-0537.</div>
+          </div>
+          <div class="pub-status"><span class="badge review">Submitted</span><span class="doi">editorial processing</span></div>
+        </article>
+
+        <article class="pub reveal" data-type="review">
+          <div class="pub-year">UNDER REVIEW</div>
+          <div>
+            <div class="pub-title">Neural correlates of workspace-related changes during visuomotor adaptation: an EEG study</div>
+            <div class="pub-citation">Addison, R. N., Steinberg, F., &amp; Van Gemmert, A. W.</div>
+          </div>
+          <div class="pub-status"><span class="badge review">Under review</span></div>
+        </article>
+
+        <article class="pub reveal" data-type="peer">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">Bilateral transfer of a visuomotor task in different workspace configurations</div>
+            <div class="pub-citation">Addison, R. N., &amp; Van Gemmert, A. W. <em>Journal of Motor Behavior</em>.</div>
+          </div>
+          <div class="pub-status"><span class="badge peer">Peer reviewed</span><a class="doi" href="https://doi.org/10.1080/00222895.2023.2293002" target="_blank" rel="noopener">10.1080/00222895.2023.2293002 ↗</a></div>
+        </article>
+
+        <article class="pub reveal" data-type="peer">
+          <div class="pub-year">2018</div>
+          <div>
+            <div class="pub-title">Remote mentoring of point-of-care ultrasound skills to inexperienced operators using multiple telemedicine platforms: Is a cell phone good enough?</div>
+            <div class="pub-citation">Smith, A., Addison, R., et al. <em>Journal of Ultrasound in Medicine</em>, 37(11), 2517-2525.</div>
+          </div>
+          <div class="pub-status"><span class="badge peer">Peer reviewed</span><a class="doi" href="https://doi.org/10.1002/jum.14609" target="_blank" rel="noopener">10.1002/jum.14609 ↗</a></div>
+        </article>
+
+        <article class="pub reveal" data-type="talk">
+          <div class="pub-year">2025</div>
+          <div>
+            <div class="pub-title">Wild blueberry supplementation and motor symptoms in Parkinson's disease</div>
+            <div class="pub-citation">Gauss, T. M., Addison, R. N., et al. Society for Neuroscience, SFN 2025.</div>
+          </div>
+          <div class="pub-status"><span class="badge talk">Conference</span></div>
+        </article>
+
+        <article class="pub reveal" data-type="talk">
+          <div class="pub-year">2024</div>
+          <div>
+            <div class="pub-title">Neural activity associated with visuomotor adaptation in various workspace locations</div>
+            <div class="pub-citation">Addison, R. N., Steinberg, F., &amp; Van Gemmert, A. W. NASPSPA 2024.</div>
+          </div>
+          <div class="pub-status"><span class="badge talk">Conference</span></div>
+        </article>
+
+        <article class="pub reveal" data-type="talk">
+          <div class="pub-year">2024</div>
+          <div>
+            <div class="pub-title">Subtyping Parkinson's disease by symptom dominance reveals differences in postural sway</div>
+            <div class="pub-citation">Gauss, T. M., Addison, R. N., et al. NASPSPA 2024.</div>
+          </div>
+          <div class="pub-status"><span class="badge talk">Conference</span></div>
+        </article>
+
+        <article class="pub reveal" data-type="talk">
+          <div class="pub-year">2023</div>
+          <div>
+            <div class="pub-title">Functional changes in superior temporal gyrus in focal dystonia</div>
+            <div class="pub-citation">Wang, Y., Hu, D., Addison, R. N., et al. 6th International Dystonia Symposium.</div>
+          </div>
+          <div class="pub-status"><span class="badge talk">Conference</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="toolkit">
+    <div class="shell">
+      <div class="section-head reveal">
+        <div class="eyebrow">06 / Toolkit</div>
+        <div><h2>Methods and tools I reach for when the problem calls for them.</h2></div>
+      </div>
+      <div class="toolkit-grid reveal">
+        <span class="tag">Clinical trial design</span><span class="tag">Bayesian inference</span><span class="tag">Biostatistics</span><span class="tag">Mixed-effects models</span><span class="tag">Longitudinal analysis</span><span class="tag">Treatment-effect estimation</span><span class="tag">Experimental design</span><span class="tag">Real-world evidence</span><span class="tag">Python</span><span class="tag">R</span><span class="tag">SQL</span><span class="tag">MATLAB</span><span class="tag">PyMC</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">XGBoost</span><span class="tag">CNNs</span><span class="tag">Transformers</span><span class="tag">Signal processing</span><span class="tag">Computer vision</span><span class="tag">Reproducible pipelines</span><span class="tag">Clinical data APIs</span><span class="tag">Git/GitHub</span><span class="tag">Stakeholder reporting</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="shell">
+      <div class="contact-panel reveal">
+        <div>
+          <div class="eyebrow">07 / Contact</div>
+          <h2>Good questions are usually worth a conversation.</h2>
+          <p>I am always interested in thoughtful work around clinical research, biopharma, biomedical AI, movement science, and quantitative methods. Email is the easiest way to reach me.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="mailto:reuben.addison@gmail.com">reuben.addison@gmail.com</a>
+            <a class="button secondary" href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+          </div>
+        </div>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/rnaddison/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a href="https://github.com/reubebe" target="_blank" rel="noopener">GitHub ↗</a>
+          <a href="https://scholar.google.com/citations?user=_TygjWwAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-  Reuben Addison &copy; 2026 &middot; Greencastle, Indiana
+  <div class="shell footer-inner">
+    <div>© <span id="year">2026</span> Reuben Newton Addison · Greencastle, Indiana</div>
+    <div class="footer-right"><span>clinical research</span><span>quantitative science</span><span>biomedical AI</span></div>
+  </div>
 </footer>
 
+<script>
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (!reduceMotion) {
+    document.addEventListener('pointermove', (e) => {
+      document.body.style.setProperty('--glow-x', e.clientX + 'px');
+      document.body.style.setProperty('--glow-y', e.clientY + 'px');
+    }, {passive:true});
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.08});
+
+  document.querySelectorAll('.reveal').forEach((el) => {
+    if (reduceMotion) el.classList.add('visible');
+    else observer.observe(el);
+  });
+
+  const navItems = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+  const sections = navItems.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      navItems.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + entry.target.id));
+    });
+  }, {rootMargin:'-35% 0px -58% 0px'});
+  sections.forEach(s => navObserver.observe(s));
+
+  const filters = document.querySelectorAll('.filter');
+  const pubs = document.querySelectorAll('.pub');
+  filters.forEach(button => button.addEventListener('click', () => {
+    filters.forEach(b => b.classList.remove('active'));
+    button.classList.add('active');
+    const f = button.dataset.filter;
+    pubs.forEach(pub => pub.hidden = !(f === 'all' || pub.dataset.type === f));
+  }));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
