@@ -18,4 +18,4 @@ Verify in-page links and asset paths after editing. Exercise both filter groups,
 
 ## Design
 
-Warm ivory, deep teal, sage, and copper. Serif display typography is paired with readable sans-serif body text. The portrait is compressed from the original photograph; the original remains in repository history and as an unchanged repository file.
+Deep navy backgrounds, blue-gray panels, near-white text, and muted blue accents. Small text is increased by 2–3 pixels throughout, with body copy generally 17–20 pixels. Serif display typography is paired with readable sans-serif body text. The portrait is compressed from the original photograph; the original remains in repository history and as an unchanged repository file.
